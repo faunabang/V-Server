@@ -70,6 +70,7 @@ function binding(){
         $(".fs-1").hide();
         $(".container").addClass("no-margin-padding");
         $(".chat-box-container").addClass("chat-box-moved"); // chat-box-container에 새로운 클래스 추가
+        $(".youtube-video-container").addClass("youtube-embed");
     });
     $(".chat-play-pause-button").click(function(event) {
         event.stopPropagation();
