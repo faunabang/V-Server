@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Jedol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://kit.fontawesome.com/3831909d96.js" crossorigin="anonymous"></script>
+    <link href="css/jedol.css" rel="stylesheet">
+    </head>
+
+    <body class="bg-warning fs-5">
+        <div class="container sm-mt-5">
+
+            <div class="d-flex flex-column">
+                <div class="my-1 d-flex justify-content-between align-items-end">
+                    <div class="fs-1 fw-bolder text-danger">
+                        <img src="images/jshs_icon.png" width="40" id="jshs-logo"> V-Jedol
+                    </div>
+                </div>
+                
+                <div id="youtube-video-container" class="positioned-div" style="display: none;">
+                    <iframe width="1150" height="710" src="https://www.youtube.com/embed/sQICRFuntw4?si=PBpa-4HmrqdU_o8V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                
+                <div class="chat-box-container border rounded shadow bg-white sm-p-5" style="min-height: 150px; line-height: 1.5;">
+                        
+                    <div id="chat-box"></div>
+                        <div class="start-info start-chat-button sm-p-5 fs-2 text-warning">
+                                <p class="hello-info">제주과학고등학교<p>
+                                <p class="hello-info">V-Jedol<p>
+                                <div id="start-chat-button" class="ms-2 btn btn-outline-warning ">Start V-Jedol</div>
+                        </div>
+                        <div class="me-2" style="display: none;" id="chat-play-pause-container">
+                            <i id="chat-play-pause" class="fa-light fa-play-pause cursor-pointer me-2" state-Chat="pause" title="대화 중지/멈춤"></i>
+                        </div>
+
+                        <div class="card-body">
+                            <div id="chat" style="overflow-y: auto;"></div>
+                        </div>
+
+                        <section id="main-page"  class="card my-1">
+                            
+                            <div class="card-footer pe-1">
+                                <div class="d-flex">
+                                    <textarea id="query" onkeydown="handleEnter(event)" class="form-control border-0 fs-5"
+                                    rows="1" placeholder="입력하세요!"></textarea>
+                                    <button class="btn " onclick="send_query()">
+                                        <i class="fa-solid fa-paper-plane-top"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                </div>
+            </div>
+
+        </div>
+        <div id="clientDevicesId"  class="fs-6 text-end text-secondary cursor-default" title="Client Id"></div>
+        <script src="js/jedol.js" crossorigin="anonymous"></script>
+    </body>
+ </html>

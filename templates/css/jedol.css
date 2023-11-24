@@ -1,0 +1,86 @@
+body{
+    font-family: 'Nanum Gothic'; 
+    font-size: 1.2em !important;
+}
+html[data-bs-theme='light'] * {
+    color: rgb(30,30, 30); /* 어두운 테마에서는 흰색 텍스트 */
+    /* background-color:rgb(244, 249, 252); */
+}
+html[data-bs-theme='dark'] * {
+    color: rgb(200,200, 200); /* 어두운 테마에서는 흰색 텍스트 */
+    background-color:rgb(7, 35, 55);
+}
+.bottom{ font-size: 0.9em }
+@media (max-width: 500px) {
+    body { font-size: 0.85em;}
+   .form-control{ font-size: 1em !important;} 
+   .bottom{ font-size: 0.7em !important; }
+   .sm-p-5{
+    padding:10px !important;
+   }
+   .sm-mt-5{
+    margin-top: 10px !important;
+   }
+}
+.sm-p-5{ padding:30px;}
+.sm-mt-5{ margin-top: 30px;}   
+.cursor-pointer { cursor: pointer;}
+.cursor-default { cursor: default;}
+@keyframes colorChange {
+0% { color: rgb(200,200,200);; } /* Change to your starting color */
+50% { color: #ffc107; } /* Change to the color at halfway point */
+100% { color:rgb(200,200,200); } /* Change back to your starting color */
+}
+.standby-Mic {
+animation: colorChange 5s infinite; /* Runs the animation over 2 seconds, repeatedly */
+}
+.loading {
+    /* Your styling here */
+    font-size: 16px; /* example size, adjust as needed */
+    /* Additional styles */
+}
+#clientDevicesId {
+    position: fixed; /* 고정 위치 설정 */
+    bottom: 0; /* 화면 하단에 위치 */
+    width: 100%; /* 전체 너비 */
+    z-index: 100; /* 다른 요소 위에 표시되도록 z-index 설정 */
+}
+.positioned-div {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+.chat-box-container {
+    right: initial; /* 또는 구체적인 초기값 */
+    transition: right 1s ease;
+    display: flex; /* flexbox 사용 */
+    flex-direction: column; /* 요소들을 세로 방향으로 정렬 */
+    justify-content: space-between; /* 내용을 위아래로 분배 */
+    min-height: 150px; /* 최소 높이 설정 */
+    line-height: 1.5; /* 줄 높이 설정 */
+}
+.chat-box-moved {
+    position: absolute; /* 절대 위치 지정 */
+    right: 0; /* 오른쪽 끝으로 이동 */
+    height: 100%; /* 높이를 화면의 1/4로 설정 */
+    width: 370px; /*         적절한 너비 설정, 필요에 따라 조정 */
+    transition: all 1s ease; /* 부드러운 전환 효과 */
+}
+.no-margin-padding {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+.full-size-video iframe {
+    width: 100%;
+    height: 100%;
+}
+#main-page {
+    display: none; /* 초기 상태에서 main-page 숨김 */
+}
+.fixed-footer {
+    position: fixed; /* 고정된 위치 */
+    bottom: 0; /* 화면의 하단에 위치 */
+    left: 0; /* 화면의 왼쪽 끝부터 시작 */
+    width: 100%; /* 전체 너비 */
+    z-index: 1000; /* 다른 요소들 위에 위치하도록 z-index 설정 */
+}
