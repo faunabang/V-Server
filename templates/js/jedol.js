@@ -215,10 +215,11 @@ function send_prompt(currentPromptId) {
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify({query: promptText}),
-        success: function(response) {
+        success: function() {
             
             stopLoadingAnimation()
-            $("#chat").scrollTop($("#chat")[0].scrollHeight);
+            // $("#chat").scrollTop($("#chat")[0].scrollHeight);
+            updateScroll();
             // $('html, body').scrollTop($(document).height());
             // audioPlayer.src = 'chat_audio/' + aiChatId + '.mp3'
             // audioPlayer.play().then( function(){
@@ -236,6 +237,7 @@ function send_prompt(currentPromptId) {
             stopLoadingAnimation(); // 
             console.log("Error occurred:", err);
             $('#' + aiChatId).html("Server Error!");
+            updateScroll();
             // audioPlayer.src = 'audio//start.mp3'
             // audioPlayer.play().then( function(){
             //     $('html, body').scrollTop($(document).height());
@@ -243,7 +245,8 @@ function send_prompt(currentPromptId) {
         }
         
     });
-    $("#chat").scrollTop($("#chat")[0].scrollHeight);
+    // $("#chat").scrollTop($("#chat")[0].scrollHeight);
+    updateScroll();
    
 }
 
@@ -340,21 +343,33 @@ function send_query() {
             method: "POST",
             contentType: "application/json",
             data: JSON.stringify({ query: query }),
-            success: function (response) {
+            success: function () {
             
                 $("#query").val("");
-                $("#chat").scrollTop($("#chat")[0].scrollHeight);         
+                // $("#chat").scrollTop($("#chat")[0].scrollHeight);         
                 $("#query").prop('disabled', false);
+                $("#query").focus();
+                updateScroll();
                 // 스크롤 위치를 가장 하단으로 이동
                
             },
             error: function () {
                 $("#query").val("");
                 $("#query").prop('disabled', false);
-                $("#chat").scrollTop($("#chat")[0].scrollHeight);
+                // $("#chat").scrollTop($("#chat")[0].scrollHeight);
+                $("#query").focus();
+                updateScroll();
             }
         });
 
         // 사용자가 메시지를 보낼 때도 스크롤 위치를 조정
-        $("#chat").scrollTop($("#chat")[0].scrollHeight);
+        // $("#chat").scrollTop($("#chat")[0].scrollHeight);
+        updateScroll();
 }
+function updateScroll() {
+    setTimeout(function() {
+        var chatBox = document.getElementById('chat-box-container');
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }, 0); // 100ms 지연
+}
+

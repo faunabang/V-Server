@@ -58,6 +58,7 @@ animation: colorChange 5s infinite; /* Runs the animation over 2 seconds, repeat
     justify-content: space-between; /* 내용을 위아래로 분배 */
     min-height: 150px; /* 최소 높이 설정 */
     line-height: 1.5; /* 줄 높이 설정 */
+    overflow-y: auto; /* 세로 스크롤바 활성화 */
 }
 .chat-box-moved {
     position: fixed; /* 절대 위치 지정 */
@@ -72,9 +73,9 @@ animation: colorChange 5s infinite; /* Runs the animation over 2 seconds, repeat
 }
 .youtube-embed {
     position: fixed; /* 절대 위치 지정 */
-    left: 0; /* 왼쪽 끝으로 이동 */
+    left: 0%; /* 왼쪽 끝으로 이동 */
     height: 100%; /* 높이를 화면의 1/4로 설정 */
-    width: 75%; /*         적절한 너비 설정, 필요에 따라 조정 */
+    width: 70%; /*         적절한 너비 설정, 필요에 따라 조정 */
     transition: all 1s ease; /* 부드러운 전환 효과 */
 }
 #main-page {
